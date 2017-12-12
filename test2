@@ -1,0 +1,9 @@
+a=12
+b=13
+c=12
+if 'a!=b && b!=c && a!=c':
+    print(0)
+if 'a=b=c':
+    print(3)
+else:
+    print(2)
