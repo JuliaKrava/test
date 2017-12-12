@@ -1,0 +1,9 @@
+x=0
+while x<=10:
+    print(x)
+    x+=1
+print('\n')
+y=20
+while y>=0:
+    print(y)
+    y-=1
