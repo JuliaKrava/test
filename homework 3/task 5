@@ -1,0 +1,25 @@
+a='We are not what we should be! We are not what we need to be. But at least we are not what we used to be'
+print(len(a.split(' ')),'\n')
+
+import string
+for q in string.punctuation:
+    a=a.replace(q,"")
+print(a,'\n')
+
+c=b=list(a.split(' '))
+b.sort()
+print(b,'\n')
+
+# while len(a)>0:
+#     print(a.strip(','))
+#     break
+
+m_dict={}
+for key in set(a.split(' ')):
+    m_dict[key]=str((a.split()).count(key))
+for key,value in m_dict.items():
+    print('slova "',key,'" v texte', (a.split()).count(key))
+
+# import re
+# print (len(re.findall('to', a)))
+
