@@ -1,0 +1,7 @@
+homework 2: 
+task1
+1)s.isdigit()
+2)s.count(' ')
+3)s.count('.')
+4)s.center(100,' ')
+5)s.title()
