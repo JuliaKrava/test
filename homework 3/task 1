@@ -1,3 +1,4 @@
+
 a=input('Vvedite stroku (>5 simvolov): ')
 if (len(a)>=5):
     print(a[2])
