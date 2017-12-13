@@ -1,0 +1,15 @@
+def treugolnik (a,b,c):
+    if (a+b>c) and (a+c>b) and (b+c>a):
+        if (a==b==c):
+            print('Equilateral triangle')
+        elif (a==b) or (a==c) or (b==c):
+            print('Isosceles triangle')
+        else:
+            print('It`s a triangle')
+    else:
+        print('Not a triangle')
+
+a=int(input('storona a: '))
+b=int(input('storona b: '))
+c=int(input('storona c: '))
+z=treugolnik(a,b,c)
