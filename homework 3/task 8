@@ -1,0 +1,17 @@
+def pisnia(word,a=3,b=3,c=0):
+    if(word=='la'):
+        print(word*b)
+        if(c==0):
+            print(word,'.')
+        elif (c==1):
+            print(word,'!')
+        else:
+            print(word)
+
+a=int(input(' a: '))
+b=int(input(' b: '))
+c=int(input('c: '))
+z=pisnia('la',a,b,c)
+
+
+
