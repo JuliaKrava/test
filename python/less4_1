@@ -1,0 +1,5 @@
+def func(*arg):
+    a=list(arg)
+    a.sort()
+    return a[-2]
+print(func(1,3,4543,566,34,5445))

@@ -1,0 +1,5 @@
+while True:
+    i=input('Vvedite slovo bez probelov: ')
+    if not ' ' in i :
+        break
+print('Thanks')

@@ -1,0 +1,6 @@
+import math
+def q(kat_1,kat_2):
+        gip=math.sqrt(kat_1**2+kat_2**2)
+        return gip
+s=q(3,4)
+print(s)

@@ -1,0 +1,10 @@
+def is_elements_string(a,b):
+    if type(a)==str or type(b)==str:
+        return True
+    else:
+        return False
+
+
+a=is_elements_string('qw','we')
+
+

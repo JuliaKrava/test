@@ -1,0 +1,16 @@
+l=[1,10,3,5,6,7,11]
+for i in range(len(l)):
+#     if item%2==0:
+#         print(item)
+#     else:
+#         print(item+1)
+# print(l)
+#     if item%2==1:
+#         item=item+1
+#         print(l)
+#     else:
+#         print(l)
+    if l[i]%2==1:
+        l[i]+=1
+print(l)
+
