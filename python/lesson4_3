@@ -6,3 +6,4 @@ print(*j,sep='q')
 
 d={'end':'!!!!!\n', 'sep':'-'}
 print('Tam','param','pam','pam',**d)
+
