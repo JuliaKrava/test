@@ -5,16 +5,16 @@ def pisnia(a=3,b=3,c=0,line="la"):
     line = (line + '\n') * a
     line = line[:-1]
     if c==0:
-        print(line, end=".")
+        return line + "."
     elif c==1:
-        print(line, end="!")
+        return line + "!"
     else:
-        print(line)
-    return 0
+        return line
+
 a=int(input('a: '))
 b=int(input('b: '))
 c=int(input('c: '))
-pisnia(a,b,c)
+print(pisnia(a,b,c))
 
 
 
