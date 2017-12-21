@@ -1,18 +1,21 @@
 
-def pisnia(word,a=3,b=3,c=0):
-    if(word=='la'):
-        print(word*b)
-        if(c==0):
-            print(word,'.')
-        elif (c==1):
-            print(word,'!')
-        else:
-            print(word)
-
-a=int(input(' a: '))
-b=int(input(' b: '))
+def pisnia(a=3,b=3,c=0,line="la"):
+    line=(line+'-')*b
+    line=line[:-1]
+    line = (line + '\n') * a
+    line = line[:-1]
+    if c==0:
+        print(line, end=".")
+    elif c==1:
+        print(line, end="!")
+    else:
+        print(line)
+    return 0
+a=int(input('a: '))
+b=int(input('b: '))
 c=int(input('c: '))
-z=pisnia('la',a,b,c)
+pisnia(a,b,c)
+
 
 
 
