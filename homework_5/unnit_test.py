@@ -1,12 +1,12 @@
 
-def is_year_leap(z):
-    if (z % 4 == 0 and z % 100 != 0) or z % 400 == 0:
-        return True
-    else:
-        return False
-
-z=int(input('vvedite z: '))
-q=print(is_year_leap(z))
+# def is_year_leap(z):
+#     if (z % 4 == 0 and z % 100 != 0) or z % 400 == 0:
+#         return True
+#     else:
+#         return False
+#
+# z=int(input('vvedite z: '))
+# q=print(is_year_leap(z))
 
 def treugolnik (a,b,c):
     if (a+b>c) and (a+c>b) and (b+c>a):
