@@ -16,3 +16,16 @@ for line in my_file:
 #for line in a:
 #    print(line.rstrip()+"!")
 
+
+import requests
+
+books_data = {
+    "title" : "War",
+    "author" : "Author"
+}
+
+r = requests.delete("http://pulse-rest-testing.herokuapp.com/books/17", data=books_data)
+books = r.json()
+print(books)
+
+
