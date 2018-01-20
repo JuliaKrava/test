@@ -1,0 +1,18 @@
+my_file = open("text_doc.txt", encoding='utf8')
+#my_string = my_file.read()
+#print(my_string)
+my_file1 = open("text1_doc.txt", 'x', encoding='utf8')
+i = 1
+for line in my_file:
+    print(str(i) + line , file=my_file1)
+    i+=1
+#print(my_string, file=my_file1)
+
+
+#my_string = my_file1.write("\nHello")
+#my_file1.close()
+
+#a=open("text_doc.txt", encoding='utf8')
+#for line in a:
+#    print(line.rstrip()+"!")
+
