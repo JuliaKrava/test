@@ -1,0 +1,62 @@
+import requests
+import unittest
+
+class TreTest(unittest.TestCase):
+        @classmethod
+        def setUpClass(cls):
+                cls.roles_data2 = {
+                "name": "Severus Snape",
+                "type": "best - Wizard - ever",
+                "level": 150,
+                "book": 1
+                }
+
+        def setUp(self):
+                self.base_url = "http://pulse-rest-testing.herokuapp.com/"
+
+        def test_create(self):
+                self.roles_data = {
+                "name": "Severus Snape",
+                "type": "Wizard",
+                "level": 50,
+                "book": 1
+                }
+                self.r = requests.post(self.base_url +"/roles/", data=self.roles_data)
+                self.data = self.r.json()
+                self.roles_data['id'] = self.r.json()['id']
+                # self.data1 = self.data['id']
+                self.assertEqual(self.r.status_code, 201)
+                print(self.data['id'])
+
+        def test_update(self):
+                # self.roles_data2 = {
+                # "name": "Severus Snape",
+                # "type": "best - Wizard - ever",
+                # "level": 150,
+                # "book": 1
+                # }
+                self.r2 = requests.put(self.base_url +"/roles/" + str(self.data['id']) + '/', data=self.roles_data2)
+        # def tearDown(self):
+        #          self.r2 = requests.delete("http://pulse-rest-testing.herokuapp.com/roles/"+str(self.data['id'])+'/')
+
+if __name__ == '__main__':
+    unittest.main(verbosity=2)
+# roles_data2 = {
+#         "id" : 5,
+#         "name": "Severus Snape",
+#         "type": "best - Wizard - ever",
+#         "level": 150,
+#         "book": 1
+# }
+# roles = r.status_code()
+# r1 = requests.put("http://pulse-rest-testing.herokuapp.com/roles/5/", data=roles_data2)
+# roles2 = r1.json()
+# r2 = requests.delete("http://pulse-rest-testing.herokuapp.com/roles/5/")
+# roles3 = r2.json()
+# print(r.status_code)
+#
+#         def test_one(self):
+#                 self.assertEqual(r.status_code, 201)
+
+
+
