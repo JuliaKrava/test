@@ -1,0 +1,61 @@
+#conftest.py
+import pytest
+import requests
+
+@pytest.fixture(scope="session")
+def app_url():
+    return "http://pulse-rest-testing.herokuapp.com/"
+
+@pytest.fixture(scope="session")
+def book(app_url):
+    response = requests.post(app_url + "books/", data={"title": "Fedor Dostoevsky", "author": "author"})
+    book = response.json()
+    yield book
+    q = requests.delete(app_url + "books/{}/".format(book["id"]))
+    # print(q.status_code)
+
+@pytest.fixture(scope="session")
+def role(book):
+    return {"name": "Fedor", "level": 10, "type": "master", "book": book["id"]}
+    
+#less_8_2.py 
+import requests
+# from conftest import app_url, role, book
+
+def test_role_create2(app_url, role):
+    print(role["book"])
+    role["level"] = ""
+    response = requests.post(app_url + "roles/", data=role)
+    assert response.status_code == 201
+    
+# def setup_module(module):
+#     print('\nsetup_module()')
+#
+# def teardown_module(module):
+#     print('teardown_module()')
+#
+# def setup_function(function):
+#     print('\nsetup_function()', function)
+#
+# def teardown_function(function):
+#     print('teardown_function()', function)
+#
+# def test_1():
+#     print('- test_1()')
+#
+# def test_2():
+#     print('- test_2()')
+
+import pytest
+
+@pytest.fixture
+def book():
+    return {"title": "Fedor Dostoevsky", "author":"author"}
+
+def test_1(book):
+    print(book)
+    n=10
+    assert  n % 2 == 0
+
+def test_2():
+    print('\ntest_2()')
