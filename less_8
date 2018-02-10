@@ -59,3 +59,16 @@ def test_1(book):
 
 def test_2():
     print('\ntest_2()')
+import requests
+# from conftest import app_url, role, book
+
+def test_role_create(app_url, role):
+    print(role["book"])
+    response = requests.post(app_url + "roles/", data=role)
+    assert response.status_code == 201
+
+def test_role_create2(app_url, role):
+    print(role["book"])
+    role["level"] = ""
+    response = requests.post(app_url + "roles/", data=role)
+    assert response.status_code == 201
