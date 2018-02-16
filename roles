@@ -1,0 +1,41 @@
+import requests
+
+
+from conftest import app_url, role, book, role2
+
+def test_role_create2(app_url, role):
+    print(role["book"])
+    role["level"] = ""
+    response = requests.post(app_url + "roles/", data=role)
+    assert response.status_code == 201
+
+def test_role_update(app_url, role2, book):
+    print(role2["book"])
+    role2["level"] = ""
+    response = requests.put(app_url + "roles/" + str(book["id"]) + "/", data=role2)
+    assert response.status_code == 201
+
+def test_role_delete(app_url,role2, book):
+    role2["level"] = ""
+    response = requests.delete(app_url + "roles/" + str(book["id"]) + "/")
+    assert response.status_code == 201
+
+
+
+    # def setup_module(module):
+    #     print('\nsetup_module()')
+    #
+    # def teardown_module(module):
+    #     print('teardown_module()')
+    #
+    # def setup_function(function):
+    #     print('\nsetup_function()', function)
+    #
+    # def teardown_function(function):
+    #     print('teardown_function()', function)
+    #
+    # def test_1():
+    #     print('- test_1()')
+    #
+    # def test_2():
+    #     print('- test_2()')
